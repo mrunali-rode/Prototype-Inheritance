@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype & Inheritance</title>
+    <style>
+        h1{
+            text-align: center;
+            color: purple;
+            background-color: yellow;
+        }
+        h3{
+            color: blue;
+        }
+        pre{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inheritance and Prototype</h1>
+    <h3>Que 1.Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h3>
+    <pre>Ans:  const ParentObj = {
+        calAge: function () {
+          console.log(`${this.fname} ${this.lname} ${this.age}`);
+        },
+      };
+      
+      const childObj = Object.create(ParentObj);
+      childObj.fname = "EA18";
+      childObj.lname = "18";
+      childObj.age = "Oct Batch";
+      
+      console.log(childObj);
+      childObj.calAge(); 
+    </pre>
+    <h3>Que 2. Write code to explain prototype chaining</h3>
+    <pre>Ans:  function Person() {
+        this.name = 'Nisha'
+    }
+    
+    // adding property 
+    Person.prototype.name = 'Peter';
+    Person.prototype.age = 22
+    
+    const person1 = new Person();
+    
+    console.log(person1.name); 
+    console.log(person1.age);
+   output: Nisha 
+           22</pre>
+    <h3>Que 3.Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h3>
+    <pre>Ans:    const calSum= {
+        sumArr:function(arr){
+          let sum=0;
+          for(let i = 0; i < arr.length; i++){
+            sum+=arr[i]
+          }
+          console.log(sum);
+        }
+      }
+      calSum.sumArr([1,2,3,4,5])  
+      calSum.sumArr([6,7,8,9,10])])  </pre>   
+    <h3>Que 4. Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h3>
+    <pre>Ans:let obj =  {
+        property: "1500 sqft",
+        villa:"ADA Colony Naini",
+        address:'Prayagaj Uttar Pradesh',
+        Dist:'Prayagraj'
+    };
+    let result=Object.keys(obj)
+    console.log(result)</pre>      
+<script src="script.js"></script>           
+</body>
+</html>
